@@ -1,16 +1,15 @@
-# commands_map.py
-import re
+from drone_control import arm_and_takeoff, land, rtl, move_forward, disarm
 
-COMMANDS = {
-    r"take off(?: (\d+))?": ("takeoff", None),
-    r"land": ("land", None),
-    r"return home|rtl": ("return_home", None),
-    r"move forward(?: (\d+))?": ("forward", None),
-    r"move backward(?: (\d+))?": ("backward", None),
-    r"move left(?: (\d+))?": ("left", None),
-    r"move right(?: (\d+))?": ("right", None),
-    r"move up(?: (\d+))?": ("up", None),
-    r"move down(?: (\d+))?": ("down", None),
-    r"set speed (\d+)": ("speed", None),
-}
-
+def handle_intent(intent, value=None):
+    if intent == "TAKEOFF":
+        arm_and_takeoff(value or 10)
+    elif intent == "LAND":
+        land()
+    elif intent == "RTL":
+        rtl()
+    elif intent == "MOVE_FORWARD":
+        move_forward(value or 5)
+    elif intent == "DISARM":
+        disarm()
+    else:
+        print(f"Unknown intent: {intent}")
