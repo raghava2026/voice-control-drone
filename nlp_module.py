@@ -62,3 +62,9 @@ class DroneNLP:
             return ("HOLD", None)
 
         return ("UNKNOWN", None)
+    
+
+if __name__ == "__main__":
+    nlp = DroneNLP()
+    
+        
