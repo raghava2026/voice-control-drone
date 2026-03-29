@@ -17,7 +17,6 @@ RUN pip install --upgrade pip && pip install \
     uvicorn==0.23.2 \
     dronekit==2.9.2 \
     pymavlink==2.4.41 \
-    vosk==0.3.45 \
     SpeechRecognition==3.10.0 \
     python-multipart==0.0.6 \
     requests==2.31.0 \

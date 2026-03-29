@@ -1,6 +1,6 @@
-from dronekit import connect, VehicleMode, LocationGlobalRelative
+from dronekit import connect, VehicleMode
 from pymavlink import mavutil
-import time, math
+import time
 
 vehicle = None
 
@@ -58,6 +58,7 @@ def send_velocity(vx, vy, vz, duration=1):
         time.sleep(0.2)
 
 # ---------------- MOVEMENT ----------------
+
 def move_forward(d): send_velocity(d, 0, 0)
 def move_backward(d): send_velocity(-d, 0, 0)
 def move_left(d): send_velocity(0, -d, 0)
